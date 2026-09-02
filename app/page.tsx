@@ -308,9 +308,21 @@ export default function Home() {
 
       <section className="about-section page-shell">
         <p className="kicker">{c.about.kicker}</p>
-        <div>
-          <h2>{c.about.title}</h2>
-          <p>{c.about.body}</p>
+        <div className="about-content">
+          <div className="about-intro">
+            <h2>{c.about.title}</h2>
+            <p className="about-body">{c.about.body}</p>
+          </div>
+
+          <div className="team-grid" aria-label={c.about.peopleLabel}>
+            {c.about.members.map((member) => (
+              <article className="team-member" key={member.name}>
+                <p className="team-member-role">{member.role}</p>
+                <h3>{member.name}</h3>
+                <p className="team-member-summary">{member.summary}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
