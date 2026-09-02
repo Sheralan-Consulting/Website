@@ -6,7 +6,7 @@
   --alpine-ink: #102a33;
   --glacier-blue: #2e6f89;
   --survey-gold: #c38a32;
-  --snow: #f4f7f5;
+  --snow: #f5f7f7;
   --navy: var(--alpine-ink);
   --blue: var(--glacier-blue);
   --blue-dark: var(--alpine-ink);
@@ -123,7 +123,7 @@ a:focus-visible {
   min-height: 4.75rem;
   padding: 0 2.5rem;
   border-bottom: 1px solid var(--line);
-  background: rgba(244, 247, 245, 0.96);
+  background: rgba(245, 247, 247, 0.96);
   backdrop-filter: blur(14px);
 }
 
@@ -378,7 +378,7 @@ a:focus-visible {
   min-width: 0;
   padding: clamp(1.5rem, 2.5vw, 2rem);
   border: 1px solid #cbd7da;
-  border-top: 4px solid var(--gold);
+  border-top: 4px solid var(--blue);
   border-radius: 0.7rem;
   background: var(--surface);
   box-shadow: 0 8px 24px rgba(16, 42, 51, 0.045);
@@ -390,7 +390,7 @@ a:focus-visible {
 
 .service:hover {
   border-color: #afc5cd;
-  border-top-color: var(--gold);
+  border-top-color: var(--blue);
   box-shadow: 0 13px 30px rgba(16, 42, 51, 0.085);
   transform: translateY(-2px);
 }
@@ -534,7 +534,7 @@ a:focus-visible {
   width: 0.32rem;
   height: 0.32rem;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--blue);
   content: "";
 }
 
