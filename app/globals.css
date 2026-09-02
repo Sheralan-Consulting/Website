@@ -376,6 +376,8 @@ a:focus-visible {
   border-radius: 0.7rem;
   background: var(--surface);
   box-shadow: 0 8px 24px rgba(10, 31, 53, 0.045);
+  cursor: pointer;
+  touch-action: pan-y;
   transition: border-color 180ms ease, box-shadow 180ms ease,
     transform 180ms ease;
 }
@@ -542,6 +544,7 @@ a:focus-visible {
   border-top: 1px solid var(--line);
   background: transparent;
   color: var(--blue-dark);
+  cursor: pointer;
   font: inherit;
   font-size: 0.82rem;
   font-weight: 750;
@@ -559,22 +562,6 @@ a:focus-visible {
 
 .service:hover .service-details-toggle {
   color: var(--blue);
-}
-
-.service-card-trigger {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  width: 100%;
-  border: 0;
-  border-radius: inherit;
-  background: transparent;
-  cursor: pointer;
-}
-
-.service-card-trigger:focus-visible {
-  outline: 3px solid rgba(0, 174, 199, 0.28);
-  outline-offset: 3px;
 }
 
 .experience-section {

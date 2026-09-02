@@ -44,6 +44,12 @@ export default function Home() {
     setMenuOpen(false);
   };
 
+  const toggleService = (serviceId: ServiceId) => {
+    setExpandedService((current) =>
+      current === serviceId ? null : serviceId,
+    );
+  };
+
   return (
     <main id="top">
       <header className="site-header">
@@ -137,6 +143,7 @@ export default function Home() {
                 className="service"
                 data-expanded={isExpanded}
                 key={service.id}
+                onClick={() => toggleService(service.id)}
               >
                 <div className="service-index">
                   <span>{service.number}</span>
@@ -177,23 +184,22 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="service-details-toggle" aria-hidden="true">
-                  <span>
-                    {isExpanded ? c.expertise.collapse : c.expertise.expand}
-                  </span>
-                  <ChevronDown size={17} strokeWidth={2} aria-hidden="true" />
-                </div>
-
                 <button
-                  className="service-card-trigger"
+                  className="service-details-toggle"
                   type="button"
                   aria-label={`${isExpanded ? c.expertise.collapse : c.expertise.expand}: ${service.title}`}
                   aria-controls={`service-detail-${service.id}`}
                   aria-expanded={isExpanded}
-                  onClick={() =>
-                    setExpandedService(isExpanded ? null : service.id)
-                  }
-                />
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    toggleService(service.id);
+                  }}
+                >
+                  <span>
+                    {isExpanded ? c.expertise.collapse : c.expertise.expand}
+                  </span>
+                  <ChevronDown size={17} strokeWidth={2} aria-hidden="true" />
+                </button>
               </article>
             );
           })}
