@@ -118,30 +118,7 @@ export const copy = {
     about: {
       kicker: "The team",
       title: "We connect governance with how systems actually work.",
-      body: "CZD Consulting brings together senior practitioners in information security, data privacy and AI governance, IT audit, technology risk and compliance, SAP architecture, GRC and ABAP engineering, backed by specialist SAP penetration testing. Working as one team, we can carry a problem from regulatory intent through governance and system design to implementation and technical verification, without losing context between advisory and delivery. Clients work directly with the specialists responsible for the analysis and the outcome.",
-      peopleLabel: "Specialists behind CZD Consulting",
-      members: [
-        {
-          name: "Demeter Viktor Nagy",
-          role: "Technology risk & governance",
-          summary: "Information security, data privacy and AI governance—from regulatory interpretation to practical control design.",
-        },
-        {
-          name: "Dániel Czabafy",
-          role: "IT risk & compliance",
-          summary: "IT audit, control assurance, technology risk and compliance across complex enterprise environments.",
-        },
-        {
-          name: "György Kálmán",
-          role: "SAP GRC & architecture",
-          summary: "SAP GRC Access Control, IAM, role design, integrations, workflows and ABAP-enabled delivery.",
-        },
-        {
-          name: "SAP security specialist",
-          role: "Technical assurance",
-          summary: "SAP security architecture, application penetration testing and remediation verification for business-critical systems.",
-        },
-      ],
+      body: "CZD Consulting brings together senior practitioners in information security, data privacy and AI governance, IT audit, technology risk and compliance, SAP architecture, GRC and ABAP engineering, backed by specialist SAP penetration testing. Each lead expert brings more than 15 years of hands-on experience in their respective field. Across the team, that experience spans regulated financial services, energy, pharmaceuticals, telecommunications and manufacturing, as well as multi-country SAP security and GRC programmes and assurance work carried from regulatory interpretation through implementation to technical verification. Clients work directly with the specialists responsible for the analysis and the outcome.",
     },
     contact: {
       kicker: "Contact",
@@ -261,30 +238,7 @@ export const copy = {
     about: {
       kicker: "A csapat",
       title: "Összekötjük az irányítást a rendszerek tényleges működésével.",
-      body: "A CZD Consulting szenior szakértői az információbiztonság, az adatvédelem és AI-irányítás, az IT-audit, technológiai kockázat és compliance, valamint az SAP-architektúra, GRC és ABAP-fejlesztés területéről érkeznek; a csapatot specializált SAP penetrációs tesztelési tudás egészíti ki. Együtt a problémát a szabályozói szándéktól az irányítási és rendszertervezésen át a megvalósításig és műszaki ellenőrzésig végig tudjuk vinni, anélkül, hogy az összefüggések a tanácsadás és a végrehajtás között elvesznének. Ügyfeleink közvetlenül azokkal a szakértőkkel dolgoznak, akik az elemzésért és az eredményért felelnek.",
-      peopleLabel: "A CZD Consulting szakértői",
-      members: [
-        {
-          name: "Demeter Viktor Nagy",
-          role: "Technológiai kockázat és irányítás",
-          summary: "Információbiztonság, adatvédelem és AI-irányítás – a szabályozási értelmezéstől a működtethető kontrollok kialakításáig.",
-        },
-        {
-          name: "Dániel Czabafy",
-          role: "IT-kockázat és compliance",
-          summary: "IT-audit, kontroll-assurance, technológiai kockázat és compliance összetett nagyvállalati környezetekben.",
-        },
-        {
-          name: "György Kálmán",
-          role: "SAP GRC és architektúra",
-          summary: "SAP GRC Access Control, IAM, szerepkörtervezés, integrációk, workflow-k és ABAP-alapú megvalósítás.",
-        },
-        {
-          name: "SAP-biztonsági szakértő",
-          role: "Technikai assurance",
-          summary: "SAP-biztonsági architektúra, alkalmazáspenetrációs tesztelés és a javítások műszaki visszaellenőrzése üzletkritikus rendszerekben.",
-        },
-      ],
+      body: "A CZD Consulting szenior szakértői az információbiztonság, az adatvédelem és AI-irányítás, az IT-audit, technológiai kockázat és compliance, valamint az SAP-architektúra, GRC és ABAP-fejlesztés területéről érkeznek; a csapatot specializált SAP penetrációs tesztelési tudás egészíti ki. Vezető szakértőink mindegyike több mint 15 év gyakorlati tapasztalattal rendelkezik saját szakterületén. A csapat együttes tapasztalata szabályozott pénzügyi, energetikai, gyógyszeripari, telekommunikációs és gyártási környezetekre, több országot érintő SAP-biztonsági és GRC-programokra, valamint a szabályozási értelmezéstől a megvalósításon át a műszaki ellenőrzésig végigvitt audit- és technológiai assurance-feladatokra terjed ki. Ügyfeleink közvetlenül azokkal a szakértőkkel dolgoznak, akik az elemzésért és az eredményért felelnek.",
     },
     contact: {
       kicker: "Kapcsolat",
