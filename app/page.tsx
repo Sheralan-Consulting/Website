@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { type MouseEvent, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -50,10 +50,42 @@ export default function Home() {
     );
   };
 
+  const navigateToSection = (
+    event: MouseEvent<HTMLAnchorElement>,
+    sectionId: string,
+  ) => {
+    const target = document.getElementById(sectionId);
+
+    if (!target) return;
+
+    event.preventDefault();
+    event.currentTarget.blur();
+    setMenuOpen(false);
+
+    if (window.location.hash) {
+      window.history.replaceState(
+        null,
+        "",
+        `${window.location.pathname}${window.location.search}`,
+      );
+    }
+
+    const headerHeight =
+      document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 0;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY;
+
+    window.scrollTo(0, Math.max(0, targetTop - headerHeight));
+  };
+
   return (
     <main id="top">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="CZD Consulting home">
+        <a
+          className="brand"
+          href="#top"
+          aria-label="CZD Consulting home"
+          onClick={(event) => navigateToSection(event, "top")}
+        >
           <span className="brand-mark" aria-hidden="true">
             CZD
           </span>
@@ -61,8 +93,18 @@ export default function Home() {
         </a>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#expertise">{c.nav.expertise}</a>
-          <a href="#experience">{c.nav.experience}</a>
+          <a
+            href="#expertise"
+            onClick={(event) => navigateToSection(event, "expertise")}
+          >
+            {c.nav.expertise}
+          </a>
+          <a
+            href="#experience"
+            onClick={(event) => navigateToSection(event, "experience")}
+          >
+            {c.nav.experience}
+          </a>
         </nav>
 
         <div className="header-actions">
@@ -75,7 +117,11 @@ export default function Home() {
             <Languages size={16} aria-hidden="true" />
             {language === "en" ? "HU" : "EN"}
           </button>
-          <a className="header-contact" href="#contact">
+          <a
+            className="header-contact"
+            href="#contact"
+            onClick={(event) => navigateToSection(event, "contact")}
+          >
             {c.nav.contact}
             <ArrowUpRight size={16} aria-hidden="true" />
           </a>
@@ -92,13 +138,22 @@ export default function Home() {
 
         {menuOpen && (
           <nav className="mobile-nav" aria-label="Mobile navigation">
-            <a href="#expertise" onClick={() => setMenuOpen(false)}>
+            <a
+              href="#expertise"
+              onClick={(event) => navigateToSection(event, "expertise")}
+            >
               {c.nav.expertise}
             </a>
-            <a href="#experience" onClick={() => setMenuOpen(false)}>
+            <a
+              href="#experience"
+              onClick={(event) => navigateToSection(event, "experience")}
+            >
               {c.nav.experience}
             </a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>
+            <a
+              href="#contact"
+              onClick={(event) => navigateToSection(event, "contact")}
+            >
               {c.nav.contact}
             </a>
           </nav>
@@ -117,7 +172,11 @@ export default function Home() {
             {c.hero.primary}
             <ArrowUpRight size={18} aria-hidden="true" />
           </a>
-          <a className="text-link" href="#expertise">
+          <a
+            className="text-link"
+            href="#expertise"
+            onClick={(event) => navigateToSection(event, "expertise")}
+          >
             {c.hero.secondary}
             <ArrowDownRight size={18} aria-hidden="true" />
           </a>
@@ -278,7 +337,9 @@ export default function Home() {
           <Link href={sitePath("/privacy/")}>
             {c.footer.notice} · {c.footer.privacy}
           </Link>
-          <a href="#top">{c.footer.top} ↑</a>
+          <a href="#top" onClick={(event) => navigateToSection(event, "top")}>
+            {c.footer.top} ↑
+          </a>
         </div>
       </footer>
     </main>
