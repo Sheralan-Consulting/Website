@@ -41,7 +41,6 @@ export const copy = {
       services: [
         {
           id: "security",
-          number: "01",
           title: "Information security & regulatory governance",
           summary: "We turn overlapping regulatory and control requirements into operating models, implementable controls and evidence that withstands scrutiny.",
           capabilities: [
@@ -58,7 +57,6 @@ export const copy = {
         },
         {
           id: "ai",
-          number: "02",
           title: "AI, data & privacy governance",
           summary: "We establish practical governance for AI and data use, connecting innovation with privacy, ownership, quality and defensible decision-making.",
           capabilities: [
@@ -75,7 +73,6 @@ export const copy = {
         },
         {
           id: "sap",
-          number: "03",
           title: "SAP security, IAM & GRC",
           summary: "We translate control objectives into the SAP roles, rules, workflows, configuration and evidence that make them operational.",
           capabilities: [
@@ -92,7 +89,6 @@ export const copy = {
         },
         {
           id: "audit",
-          number: "04",
           title: "IT audit & technology assurance",
           summary: "We assess whether governance, controls and implementations work in practice, producing clear findings and proportionate remediation.",
           capabilities: [
@@ -110,9 +106,27 @@ export const copy = {
       ],
     },
     experience: {
-      kicker: "Selected experience",
-      title: "Enterprise experience behind the team.",
-      body: "Selected organisations from individual team members’ professional experience, including roles held before Sheralan Consulting.",
+      kicker: "Selected outcomes",
+      title: "Results behind the expertise.",
+      body: "Examples from individual specialists’ professional engagements, including work completed before Sheralan Consulting.",
+      outcomes: [
+        {
+          context: "Multinational SAP security",
+          title: "Six rollout waves across 18 countries",
+          body: "Delivered SAP ERP and BI/BW security support alongside a GRC upgrade, SoD management, automated role provisioning and user-access review.",
+        },
+        {
+          context: "Regulated financial services",
+          title: "Cloud governance made evidence-ready",
+          body: "Converted Hungarian cloud requirements into provider-level service and data mapping, continuity scenarios, exit planning and cost-benefit decisions.",
+        },
+        {
+          context: "Enterprise data governance",
+          title: "Ownership and decision rights defined",
+          body: "Designed governance-board and centre-of-excellence mandates covering data lifecycle, quality, classification, prioritisation and escalation.",
+        },
+      ],
+      organisationsLabel: "Organisations represented in the team’s experience",
       organisations,
       ariaLabel: "Organisations represented in our professional experience",
     },
@@ -165,7 +179,6 @@ export const copy = {
       services: [
         {
           id: "security",
-          number: "01",
           title: "Információbiztonság és szabályozási irányítás",
           summary: "Az egymásra épülő szabályozási és kontrollkövetelményeket működő irányítási modellé, bevezethető kontrollokká és auditálható bizonyítékokká alakítjuk.",
           capabilities: [
@@ -182,7 +195,6 @@ export const copy = {
         },
         {
           id: "ai",
-          number: "02",
           title: "AI-, adat- és adatvédelmi irányítás",
           summary: "Az AI- és adatfelhasználás számára olyan működtethető irányítást alakítunk ki, amely összekapcsolja az innovációt az adatvédelemmel, a felelősségi körökkel, az adatminőséggel és a bizonyítható döntéshozatallal.",
           capabilities: [
@@ -199,7 +211,6 @@ export const copy = {
         },
         {
           id: "sap",
-          number: "03",
           title: "SAP-biztonság, IAM és GRC",
           summary: "A kontrollcélokat az SAP-ban az azokat megvalósító szerepkörökre, szabályokra, workflow-kra, konfigurációra és bizonyítékokra fordítjuk le.",
           capabilities: [
@@ -216,7 +227,6 @@ export const copy = {
         },
         {
           id: "audit",
-          number: "04",
           title: "IT-audit és technológiai assurance",
           summary: "Megvizsgáljuk, hogy az irányítás, a kontrollok és a megvalósítás a gyakorlatban is működik-e, majd egyértelmű megállapításokat és arányos javító intézkedéseket adunk.",
           capabilities: [
@@ -234,9 +244,27 @@ export const copy = {
       ],
     },
     experience: {
-      kicker: "Válogatott tapasztalat",
-      title: "Nagyvállalati tapasztalat a csapat mögött.",
-      body: "Válogatás csapattagjaink egyéni szakmai tapasztalatából, beleértve a Sheralan Consulting létrejötte előtti szerepköröket is.",
+      kicker: "Válogatott eredmények",
+      title: "A szakértelem mögötti eredmények.",
+      body: "Egyéni szakértőink szakmai megbízásaiból, köztük a Sheralan Consulting létrejötte előtt lezárt munkákból.",
+      outcomes: [
+        {
+          context: "Nemzetközi SAP-biztonság",
+          title: "Hat bevezetési hullám 18 országban",
+          body: "SAP ERP- és BI/BW-biztonsági támogatás SAP GRC-frissítéssel, SoD-kezeléssel, automatizált szerepkör-kiosztással és felhasználói jogosultság-felülvizsgálattal.",
+        },
+        {
+          context: "Szabályozott pénzügyi szektor",
+          title: "Auditálhatóvá tett felhőirányítás",
+          body: "A magyar felhőkövetelményeket szolgáltatónkénti szolgáltatás- és adatfeltérképezésre, folytonossági forgatókönyvekre, kivezetési tervekre, valamint költség-haszon elemzésekre és döntési javaslatokra fordítottuk le.",
+        },
+        {
+          context: "Vállalati adatirányítás",
+          title: "Meghatározott felelősségek és döntési jogkörök",
+          body: "Adatirányítási testület és kompetenciaközpont mandátumát terveztük meg az adatéletciklus, a minőség, az osztályozás, a prioritások és az eszkalációk lefedésére.",
+        },
+      ],
+      organisationsLabel: "A csapat tapasztalatában szereplő szervezetek",
       organisations,
       ariaLabel: "Szakmai tapasztalatunkban szereplő szervezetek",
     },

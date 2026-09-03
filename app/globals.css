@@ -62,8 +62,7 @@
   --radius-md: 0.5rem;
   --radius-lg: 0.7rem;
   --radius-xl: 0.9rem;
-  --font-sans: Inter, "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+  --font-sans: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
@@ -80,8 +79,7 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--text);
-  font-family: Inter, "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
+  font-family: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
@@ -431,13 +429,10 @@ a:focus-visible {
 
 .service-index {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   margin-bottom: 1.55rem;
   color: var(--blue);
-  font-family: "SFMono-Regular", Consolas, monospace;
-  font-size: 0.78rem;
-  font-weight: 700;
 }
 
 .service-index svg {
@@ -611,7 +606,63 @@ a:focus-visible {
 }
 
 .experience-heading {
-  padding-bottom: 2.7rem;
+  padding-bottom: 2.5rem;
+}
+
+.outcome-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 3rem;
+  border-block: 1px solid var(--line);
+}
+
+.outcome {
+  padding: 2rem clamp(1.35rem, 3vw, 2.5rem);
+  border-left: 1px solid var(--line);
+}
+
+.outcome:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.outcome:last-child {
+  padding-right: 0;
+}
+
+.outcome-context,
+.organisations-label {
+  color: var(--blue);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.outcome-context {
+  margin: 0;
+}
+
+.outcome h3 {
+  margin: 0.85rem 0 0;
+  color: var(--navy);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+.outcome > p:last-child {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.organisations-label {
+  margin-bottom: 1rem;
 }
 
 .organisation-marquee {
@@ -984,6 +1035,22 @@ a:focus-visible {
 
   .service-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .outcome-list {
+    grid-template-columns: 1fr;
+  }
+
+  .outcome,
+  .outcome:first-child,
+  .outcome:last-child {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .outcome:first-child {
+    border-top: 0;
   }
 
   .service h3 {

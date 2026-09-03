@@ -211,8 +211,7 @@ export default function HomePage({ language }: HomePageProps) {
                   aria-expanded={isExpanded}
                   onClick={() => toggleService(service.id)}
                 />
-                <div className="service-index">
-                  <span>{service.number}</span>
+                <div className="service-index" aria-hidden="true">
                   <Icon size={27} strokeWidth={1.45} aria-hidden="true" />
                 </div>
                 <h3>{service.title}</h3>
@@ -273,6 +272,20 @@ export default function HomePage({ language }: HomePageProps) {
             <p>{c.experience.body}</p>
           </div>
         </div>
+
+        <div className="page-shell outcome-list">
+          {c.experience.outcomes.map((outcome) => (
+            <article className="outcome" key={outcome.title}>
+              <p className="outcome-context">{outcome.context}</p>
+              <h3>{outcome.title}</h3>
+              <p>{outcome.body}</p>
+            </article>
+          ))}
+        </div>
+
+        <p className="page-shell organisations-label">
+          {c.experience.organisationsLabel}
+        </p>
 
         <div
           className="organisation-marquee"
