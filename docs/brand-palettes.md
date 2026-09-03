@@ -19,4 +19,4 @@ To restore it, set Snow back to `#F4F7F5`, use `rgba(244, 247, 245, 0.96)` for t
 
 ## Current technical-consulting treatment
 
-The same identity is retained, but Snow is cooled to `#F5F7F7`, Glacier Blue carries functional and structural accents, and Survey Gold is reserved for the logo detail.
+The same identity is retained, but Snow is cooled to `#F5F7F7` and Glacier Blue carries the functional and structural accents. Survey Gold remains documented as part of the original Alpine Survey treatment but is not used by the Ridge Type trial.

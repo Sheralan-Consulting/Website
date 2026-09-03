@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-labelledby="title description">
+  <title id="title">Sheralan Consulting</title>
+  <desc id="description">Sheralan wordmark crossed by a restrained ridge profile.</desc>
+  <text x="18" y="105" fill="#102A33" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800" textLength="600" lengthAdjust="spacingAndGlyphs">SHERALAN</text>
+  <path d="M278 45 344 29 404 5 469 32 526 16 580 39 624 47" fill="none" stroke="#102A33" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M404 5 469 32" fill="none" stroke="#2E6F89" stroke-width="7" stroke-linecap="square"/>
+  <text x="142" y="148" fill="#102A33" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" textLength="356" lengthAdjust="spacing">CONSULTING</text>
+</svg>

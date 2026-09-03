@@ -1,11 +1,13 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { ArrowLeft, Languages } from "lucide-react";
 import Link from "next/link";
+import BrandLogo from "./brand-logo";
 import { sitePath } from "@/lib/site-path";
 
 type Language = "en" | "hu";
+
+type PrivacyNoticeProps = {
+  language: Language;
+};
 
 const privacyCopy = {
   en: {
@@ -13,9 +15,9 @@ const privacyCopy = {
     back: "Back to website",
     kicker: "Privacy",
     title: "Privacy notice",
-    lead: "This notice applies when you contact CZD Consulting by email. We collect no personal data directly through this website.",
+    lead: "This notice applies when you contact Sheralan Consulting by email. We collect no personal data directly through this website.",
     updated: "Effective 2 September 2026",
-    legal: "Czabafy Consulting Kft. · Gárdony, Hungary",
+    legal: "Sheralan Consulting · Czabafy Consulting Kft. · Gárdony, Hungary",
     sections: [
       {
         title: "Controller",
@@ -51,7 +53,7 @@ const privacyCopy = {
       {
         title: "Who receives it",
         paragraphs: [
-          "Access is limited to CZD Consulting personnel or specialists who need the information to handle the enquiry, and email or IT providers acting on our behalf. We may disclose data where required by law. If a service provider processes data outside the EEA, the applicable GDPR transfer safeguards are used.",
+          "Access is limited to Sheralan Consulting personnel or specialists who need the information to handle the enquiry, and email or IT providers acting on our behalf. We may disclose data where required by law. If a service provider processes data outside the EEA, the applicable GDPR transfer safeguards are used.",
         ],
         link: null,
       },
@@ -86,7 +88,7 @@ const privacyCopy = {
       {
         title: "Website data",
         paragraphs: [
-          "The website has no contact form, analytics, advertising trackers or non-essential cookies. CZD Consulting does not use visitor data for analytics or marketing. The hosting provider may temporarily process limited technical connection data, such as an IP address and request details, to deliver and secure the site. CZD Consulting does not use that information to identify or profile visitors.",
+          "The website has no contact form, analytics, advertising trackers or non-essential cookies. Sheralan Consulting does not use visitor data for analytics or marketing. The hosting provider may temporarily process limited technical connection data, such as an IP address and request details, to deliver and secure the site. Sheralan Consulting does not use that information to identify or profile visitors.",
         ],
         link: null,
       },
@@ -97,9 +99,9 @@ const privacyCopy = {
     back: "Vissza a weboldalra",
     kicker: "Adatvédelem",
     title: "Adatkezelési tájékoztató",
-    lead: "Ez a tájékoztató arra az esetre vonatkozik, ha e-mailben kapcsolatba lép a CZD Consultinggal. A weboldalon keresztül közvetlenül nem gyűjtünk személyes adatot.",
+    lead: "Ez a tájékoztató arra az esetre vonatkozik, ha e-mailben kapcsolatba lép a Sheralan Consultinggal. A weboldalon keresztül közvetlenül nem gyűjtünk személyes adatot.",
     updated: "Hatályos: 2026. szeptember 2.",
-    legal: "Czabafy Consulting Kft. · Gárdony, Magyarország",
+    legal: "Sheralan Consulting · Czabafy Consulting Kft. · Gárdony, Magyarország",
     sections: [
       {
         title: "Adatkezelő",
@@ -135,7 +137,7 @@ const privacyCopy = {
       {
         title: "Az adatok címzettjei",
         paragraphs: [
-          "Az adatokhoz kizárólag a CZD Consulting megkeresés kezelésében részt vevő munkatársai vagy szakértői, továbbá a nevünkben eljáró e-mail- és IT-szolgáltatók férhetnek hozzá. Jogszabályi kötelezettség esetén az adatokat az illetékes szervnek átadhatjuk. Ha valamely szolgáltató az EGT-n kívül kezel adatot, az adattovábbításra a GDPR szerinti megfelelő garanciákat alkalmazzuk.",
+          "Az adatokhoz kizárólag a Sheralan Consulting megkeresés kezelésében részt vevő munkatársai vagy szakértői, továbbá a nevünkben eljáró e-mail- és IT-szolgáltatók férhetnek hozzá. Jogszabályi kötelezettség esetén az adatokat az illetékes szervnek átadhatjuk. Ha valamely szolgáltató az EGT-n kívül kezel adatot, az adattovábbításra a GDPR szerinti megfelelő garanciákat alkalmazzuk.",
         ],
         link: null,
       },
@@ -170,7 +172,7 @@ const privacyCopy = {
       {
         title: "A weboldal adatkezelése",
         paragraphs: [
-          "A weboldalon nincs kapcsolatfelvételi űrlap, analitika, reklámcélú követőkód vagy nem szükséges süti. A CZD Consulting a látogatói adatokat nem használja analitikára vagy marketingre. A tárhelyszolgáltató a weboldal továbbítása és védelme érdekében ideiglenesen korlátozott technikai kapcsolatadatokat – például IP-címet és kérésadatokat – kezelhet. A CZD Consulting ezeket nem használja a látogatók azonosítására vagy profilozására.",
+          "A weboldalon nincs kapcsolatfelvételi űrlap, analitika, reklámcélú követőkód vagy nem szükséges süti. A Sheralan Consulting a látogatói adatokat nem használja analitikára vagy marketingre. A tárhelyszolgáltató a weboldal továbbítása és védelme érdekében ideiglenesen korlátozott technikai kapcsolatadatokat – például IP-címet és kérésadatokat – kezelhet. A Sheralan Consulting ezeket nem használja a látogatók azonosítására vagy profilozására.",
         ],
         link: null,
       },
@@ -178,35 +180,34 @@ const privacyCopy = {
   },
 } as const;
 
-export default function PrivacyNotice() {
-  const [language, setLanguage] = useState<Language>("en");
+export default function PrivacyNotice({ language }: PrivacyNoticeProps) {
   const c = privacyCopy[language];
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
+  const homeHref = sitePath(language === "en" ? "/" : "/hu/");
+  const languageHref = sitePath(
+    language === "en" ? "/hu/adatvedelem/" : "/privacy/",
+  );
+  const companyHref = sitePath(
+    language === "en" ? "/company-details/" : "/hu/cegadatok/",
+  );
 
   return (
     <main className="privacy-page">
       <header className="site-header privacy-header">
-        <Link className="brand" href={sitePath("/")} aria-label="CZD Consulting home">
-          <span className="brand-mark" aria-hidden="true">
-            CZD
-          </span>
-          <span className="brand-name">Consulting</span>
+        <Link className="brand" href={homeHref} aria-label={language === "en" ? "Sheralan Consulting home" : "Sheralan Consulting kezdőlap"}>
+          <BrandLogo />
         </Link>
 
         <div className="header-actions">
-          <button
+          <Link
             className="language-button"
-            type="button"
-            onClick={() => setLanguage((current) => (current === "en" ? "hu" : "en"))}
+            href={languageHref}
+            hrefLang={language === "en" ? "hu" : "en"}
             aria-label={c.language}
           >
             <Languages size={16} aria-hidden="true" />
             {language === "en" ? "HU" : "EN"}
-          </button>
-          <Link className="privacy-back" href={sitePath("/")}>
+          </Link>
+          <Link className="privacy-back" href={homeHref}>
             <ArrowLeft size={16} aria-hidden="true" />
             <span>{c.back}</span>
           </Link>
@@ -259,7 +260,12 @@ export default function PrivacyNotice() {
       <footer className="site-footer">
         <div className="page-shell footer-grid privacy-footer-grid">
           <p>{c.legal}</p>
-          <Link href={sitePath("/")}>{c.back} ↑</Link>
+          <nav className="footer-links" aria-label={language === "en" ? "Legal information" : "Jogi információk"}>
+            <Link href={companyHref}>
+              {language === "en" ? "Company details" : "Cégadatok"}
+            </Link>
+            <Link href={homeHref}>{c.back} ↑</Link>
+          </nav>
         </div>
       </footer>
     </main>

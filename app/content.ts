@@ -15,6 +15,7 @@ const organisations = [
 
 export const copy = {
   en: {
+    brandHome: "Sheralan Consulting home",
     nav: {
       expertise: "Expertise",
       experience: "Experience",
@@ -111,14 +112,14 @@ export const copy = {
     experience: {
       kicker: "Selected experience",
       title: "Enterprise experience behind the team.",
-      body: "Selected organisations represented in our team’s professional experience.",
+      body: "Selected organisations from individual team members’ professional experience, including roles held before Sheralan Consulting.",
       organisations,
       ariaLabel: "Organisations represented in our professional experience",
     },
     about: {
       kicker: "The team",
       title: "We connect governance with how systems actually work.",
-      body: "CZD Consulting brings together senior practitioners in information security, data privacy and AI governance, IT audit, technology risk and compliance, SAP architecture, GRC and ABAP engineering, backed by specialist SAP penetration testing. Each lead expert brings more than 15 years of hands-on experience in their respective field. Across the team, that experience spans regulated financial services, energy, pharmaceuticals, telecommunications and manufacturing, as well as multi-country SAP security and GRC programmes and assurance work carried from regulatory interpretation through implementation to technical verification. Clients work directly with the specialists responsible for the analysis and the outcome.",
+      body: "Sheralan Consulting brings together senior practitioners in information security, data privacy and AI governance, IT audit, technology risk and compliance, SAP architecture, GRC and ABAP engineering, backed by specialist SAP penetration testing. Each lead expert brings more than 15 years of hands-on experience in their respective field. Across the team, that experience spans regulated financial services, energy, pharmaceuticals, telecommunications and manufacturing, as well as multi-country SAP security and GRC programmes and assurance work carried from regulatory interpretation through implementation to technical verification. Clients work directly with the specialists responsible for the analysis and the outcome.",
     },
     contact: {
       kicker: "Contact",
@@ -126,15 +127,19 @@ export const copy = {
       body: "Send a short description. We will tell you directly whether and how we can help.",
       action: "demeter.nagy@czdconsulting.com",
       availability: "Available in English and Hungarian",
+      subject: "Consulting enquiry — Sheralan Consulting",
     },
     footer: {
-      legal: "Czabafy Consulting Kft. · Gárdony, Hungary",
+      legal: "Sheralan Consulting · Czabafy Consulting Kft. · Gárdony, Hungary",
       privacy: "No analytics. No tracking.",
       notice: "Privacy notice",
+      company: "Company details",
+      legalNavigation: "Legal information",
       top: "Back to top",
     },
   },
   hu: {
+    brandHome: "Sheralan Consulting kezdőlap",
     nav: {
       expertise: "Szakterületek",
       experience: "Tapasztalat",
@@ -231,14 +236,14 @@ export const copy = {
     experience: {
       kicker: "Válogatott tapasztalat",
       title: "Nagyvállalati tapasztalat a csapat mögött.",
-      body: "Válogatás azokból a szervezetekből, amelyeknél csapatunk tagjai szakmai tapasztalatot szereztek.",
+      body: "Válogatás csapattagjaink egyéni szakmai tapasztalatából, beleértve a Sheralan Consulting létrejötte előtti szerepköröket is.",
       organisations,
       ariaLabel: "Szakmai tapasztalatunkban szereplő szervezetek",
     },
     about: {
       kicker: "A csapat",
       title: "Összekötjük az irányítást a rendszerek tényleges működésével.",
-      body: "A CZD Consulting szenior szakértői az információbiztonság, az adatvédelem és AI-irányítás, az IT-audit, technológiai kockázat és compliance, valamint az SAP-architektúra, GRC és ABAP-fejlesztés területéről érkeznek; a csapatot specializált SAP penetrációs tesztelési tudás egészíti ki. Vezető szakértőink mindegyike több mint 15 év gyakorlati tapasztalattal rendelkezik saját szakterületén. A csapat együttes tapasztalata szabályozott pénzügyi, energetikai, gyógyszeripari, telekommunikációs és gyártási környezetekre, több országot érintő SAP-biztonsági és GRC-programokra, valamint a szabályozási értelmezéstől a megvalósításon át a műszaki ellenőrzésig végigvitt audit- és technológiai assurance-feladatokra terjed ki. Ügyfeleink közvetlenül azokkal a szakértőkkel dolgoznak, akik az elemzésért és az eredményért felelnek.",
+      body: "A Sheralan Consulting szenior szakértői az információbiztonság, az adatvédelem és AI-irányítás, az IT-audit, technológiai kockázat és compliance, valamint az SAP-architektúra, GRC és ABAP-fejlesztés területéről érkeznek; a csapatot specializált SAP penetrációs tesztelési tudás egészíti ki. Vezető szakértőink mindegyike több mint 15 év gyakorlati tapasztalattal rendelkezik saját szakterületén. A csapat együttes tapasztalata szabályozott pénzügyi, energetikai, gyógyszeripari, telekommunikációs és gyártási környezetekre, több országot érintő SAP-biztonsági és GRC-programokra, valamint a szabályozási értelmezéstől a megvalósításon át a műszaki ellenőrzésig végigvitt audit- és technológiai assurance-feladatokra terjed ki. Ügyfeleink közvetlenül azokkal a szakértőkkel dolgoznak, akik az elemzésért és az eredményért felelnek.",
     },
     contact: {
       kicker: "Kapcsolat",
@@ -246,11 +251,14 @@ export const copy = {
       body: "Írja le röviden. Egyenesen megmondjuk, hogy tudunk-e és hogyan tudunk segíteni.",
       action: "demeter.nagy@czdconsulting.com",
       availability: "Magyar és angol nyelven",
+      subject: "Tanácsadási megkeresés — Sheralan Consulting",
     },
     footer: {
-      legal: "Czabafy Consulting Kft. · Gárdony, Magyarország",
+      legal: "Sheralan Consulting · Czabafy Consulting Kft. · Gárdony, Magyarország",
       privacy: "Nincs analitika. Nincs követés.",
       notice: "Adatkezelési tájékoztató",
+      company: "Cégadatok",
+      legalNavigation: "Jogi információk",
       top: "Vissza az elejére",
     },
   },

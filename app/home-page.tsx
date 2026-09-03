@@ -1,6 +1,6 @@
 "use client";
 
-import { type MouseEvent, useEffect, useState } from "react";
+import { type MouseEvent, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -17,10 +17,15 @@ import {
   X,
 } from "lucide-react";
 import { copy } from "./content";
+import BrandLogo from "./brand-logo";
 import { sitePath } from "@/lib/site-path";
 
 type Language = "en" | "hu";
 type ServiceId = keyof typeof serviceIcons;
+
+type HomePageProps = {
+  language: Language;
+};
 
 const serviceIcons = {
   security: ShieldCheck,
@@ -29,20 +34,19 @@ const serviceIcons = {
   audit: ClipboardCheck,
 };
 
-export default function Home() {
-  const [language, setLanguage] = useState<Language>("en");
+export default function HomePage({ language }: HomePageProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedService, setExpandedService] = useState<ServiceId | null>(null);
   const c = copy[language];
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
-
-  const switchLanguage = () => {
-    setLanguage((current) => (current === "en" ? "hu" : "en"));
-    setMenuOpen(false);
-  };
+  const homeHref = sitePath(language === "en" ? "/" : "/hu/");
+  const languageHref = sitePath(language === "en" ? "/hu/" : "/");
+  const privacyHref = sitePath(
+    language === "en" ? "/privacy/" : "/hu/adatvedelem/",
+  );
+  const companyHref = sitePath(
+    language === "en" ? "/company-details/" : "/hu/cegadatok/",
+  );
+  const contactHref = `mailto:demeter.nagy@czdconsulting.com?subject=${encodeURIComponent(c.contact.subject)}`;
 
   const toggleService = (serviceId: ServiceId) => {
     setExpandedService((current) =>
@@ -80,17 +84,13 @@ export default function Home() {
   return (
     <main id="top">
       <header className="site-header">
-        <a
+        <Link
           className="brand"
-          href="#top"
-          aria-label="CZD Consulting home"
-          onClick={(event) => navigateToSection(event, "top")}
+          href={homeHref}
+          aria-label={c.brandHome}
         >
-          <span className="brand-mark" aria-hidden="true">
-            CZD
-          </span>
-          <span className="brand-name">Consulting</span>
-        </a>
+          <BrandLogo />
+        </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a
@@ -108,15 +108,15 @@ export default function Home() {
         </nav>
 
         <div className="header-actions">
-          <button
+          <Link
             className="language-button"
-            type="button"
-            onClick={switchLanguage}
+            href={languageHref}
+            hrefLang={language === "en" ? "hu" : "en"}
             aria-label={c.language}
           >
             <Languages size={16} aria-hidden="true" />
             {language === "en" ? "HU" : "EN"}
-          </button>
+          </Link>
           <a
             className="header-contact"
             href="#contact"
@@ -167,7 +167,7 @@ export default function Home() {
         <div className="hero-actions">
           <a
             className="button button-primary"
-            href="mailto:demeter.nagy@czdconsulting.com"
+            href={contactHref}
           >
             {c.hero.primary}
             <ArrowUpRight size={18} aria-hidden="true" />
@@ -202,8 +202,15 @@ export default function Home() {
                 className="service"
                 data-expanded={isExpanded}
                 key={service.id}
-                onClick={() => toggleService(service.id)}
               >
+                <button
+                  className="service-hitarea"
+                  type="button"
+                  aria-label={`${isExpanded ? c.expertise.collapse : c.expertise.expand}: ${service.title}`}
+                  aria-controls={`service-detail-${service.id}`}
+                  aria-expanded={isExpanded}
+                  onClick={() => toggleService(service.id)}
+                />
                 <div className="service-index">
                   <span>{service.number}</span>
                   <Icon size={27} strokeWidth={1.45} aria-hidden="true" />
@@ -243,22 +250,15 @@ export default function Home() {
                   </div>
                 </div>
 
-                <button
+                <div
                   className="service-details-toggle"
-                  type="button"
-                  aria-label={`${isExpanded ? c.expertise.collapse : c.expertise.expand}: ${service.title}`}
-                  aria-controls={`service-detail-${service.id}`}
-                  aria-expanded={isExpanded}
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    toggleService(service.id);
-                  }}
+                  aria-hidden="true"
                 >
                   <span>
                     {isExpanded ? c.expertise.collapse : c.expertise.expand}
                   </span>
                   <ChevronDown size={17} strokeWidth={2} aria-hidden="true" />
-                </button>
+                </div>
               </article>
             );
           })}
@@ -322,7 +322,7 @@ export default function Home() {
           </div>
           <div className="contact-action">
             <p>{c.contact.body}</p>
-            <a href="mailto:demeter.nagy@czdconsulting.com">
+            <a href={contactHref}>
               <span>{c.contact.action}</span>
               <ArrowUpRight size={28} aria-hidden="true" />
             </a>
@@ -334,9 +334,11 @@ export default function Home() {
       <footer className="site-footer">
         <div className="page-shell footer-grid">
           <p>{c.footer.legal}</p>
-          <Link href={sitePath("/privacy/")}>
-            {c.footer.notice} · {c.footer.privacy}
-          </Link>
+          <nav className="footer-links" aria-label={c.footer.legalNavigation}>
+            <Link href={privacyHref}>{c.footer.notice}</Link>
+            <Link href={companyHref}>{c.footer.company}</Link>
+            <span>{c.footer.privacy}</span>
+          </nav>
           <a href="#top" onClick={(event) => navigateToSection(event, "top")}>
             {c.footer.top} ↑
           </a>
